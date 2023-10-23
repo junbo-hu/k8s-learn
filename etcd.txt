@@ -2,5 +2,13 @@ HOST_1=192.168.131.201
 HOST_2=192.168.131.202
 HOST_3=192.168.131.203
 ENDPOINTS=$HOST_1:2379,$HOST_2:2379,$HOST_3:2379
+
+alias etcdctl='etcdctl --endpoints=$ENDPOINTS --cert=/etc/ssl/etcd/ssl/ca.pem --key=/etc/ssl/etcd/ssl/ca-key.pem --cacert=/etc/ssl/etcd/ssl/ca.pem'
  
 etcdctl --endpoints=$ENDPOINTS member list
+
+获取根路径所有key
+etcdctl get / --prefix=true --keys-only
+
+查看节点状态
+etcdctl endpoint status -w table

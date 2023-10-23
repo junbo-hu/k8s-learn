@@ -1,0 +1,3 @@
+CNI(Container Network Interface) 容器网络接口
+
+vxlan：一种overlay技术，通过三层网络来搭建虚拟的二层网络
